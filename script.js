@@ -91,15 +91,11 @@ function mousePressed() {
         // Activar la pelota
         pelota.activa = true;
 
-        // Calcular la dirección y velocidad basadas en la posición del clic
-        // Esto hace que la pelota se aleje del punto de clic
-        const dx = pelota.x - mouseX;
-        const dy = pelota.y - mouseY;
 
-        // Normalizar y escalar la velocidad
-        const magnitude = Math.sqrt(dx * dx + dy * dy);
-        pelota.velocidadX = (dx / magnitude) * 8;
-        pelota.velocidadY = (dy / magnitude) * 8;
+        // Dar una velocidad inicial
+        pelota.velocidadX = random(-5, 5);
+        pelota.velocidadY = random(-5, 5);
+
 
         // Cambiar el color de la pelota cuando está activa
         pelota.color = '#2196f3';
